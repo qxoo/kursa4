@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -9,11 +9,45 @@
 	</head>
 	<body>
 		<div class="container">
-			<pre class="container_pre" id="graphics"></pre>
-			<button class="container_toggleBtn" id="button_toggle">
-				Make it move
+			<pre class="container_pre" id="asciiGraphics"></pre>
+			<button class="container_toggleBtn" id="button_toggle" onclick="anim1();">
+				Do smth
+			</button>
+			<canvas class="container_pre" id="canvasGraphics"></canvas>
+			<button class="container_toggleBtn" id="button_toggle" onclick="anim2();">
+				Do smth else
 			</button>
 		</div>
-		<script src="./graphics.js"></script>
+		<script src="./graphicsNew.js"></script>
+	</body>
+</html> -->
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>test</title>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="container_buttons">
+				<button class="container_buttons_animateASCII">
+					toggle ASCII animation
+				</button>
+				<button class="container_buttons_animateCanvas">
+					toggle canvas animation
+				</button>
+			</nav>
+			<nav class="container_buttons">
+				<button class="container_buttons_addFrame">add 50 frame</button>
+				<button class="container_buttons_removeFrame">remove 50 frame</button>
+			</nav>
+			<div class="container_content">
+				<pre id="asciiGraphics"></pre>
+				<canvas id="canvasGraphics" width="300" height="240"> </canvas>
+			</div>
+		</div>
+		<script src="graphicsNew2.js"></script>
 	</body>
 </html>

@@ -1,6 +1,7 @@
 let pageIsLoaded = false
 // let toggleBtn = null;
-let windowWidth = null
+// let windowWidth = null
+let z = null
 class GraphicsMovement {
 	initializeCode() {
 		this.graphicsParagraph = document.getElementById("graphics")
@@ -11,7 +12,7 @@ class GraphicsMovement {
 		this.phi_sp = 0
 	}
 	renderFrame() {
-		windowWidth = window.innerWidth
+		// windowWidth = window.innerWidth
 		this.b = []
 		this.zBuffer = []
 		this.theta_sp += 0.05
@@ -24,7 +25,7 @@ class GraphicsMovement {
 		// console.log(this.sinPhi_sp)
 		// console.log(this.phi_sp)
 
-		for (let k = 0; k <= windowWidth; k++) {
+		for (let k = 0; k <= 1776; k++) {
 			this.b[k] = k % 80 == 79 ? "\n" : " "
 			this.zBuffer[k] = 0
 		}
@@ -39,12 +40,12 @@ class GraphicsMovement {
 			this.cosPhi = Math.cos(phi)
 			this.sinPhi = Math.sin(phi)
 			this.circleX = this.cosTheta + 2
-			this.z =
+			z =
 				this.sinPhi +
 				this.circleX * this.theta_sp +
 				this.sinTheta * this.cosTheta_sp +
 				5
-			this.D = 1 / this.z
+			this.D = 1 / z
 			this.t =
 				this.sinPhi * this.circleX * this.cosPhi_sp -
 				this.sinTheta * this.sinTheta_sp
@@ -85,7 +86,7 @@ class GraphicsMovement {
 				this.b[this.o] = "@@%%##**++==--::..  "[this.N > 0 ? this.N : 0]
 			}
 		}
-		this.graphicsParagraph.innerHTML = this.b.join(" ")
+		this.graphicsParagraph.innerHTML = this.b.join("")
 		// this.graphicsParagraph.innerHTML = 123
 	}
 	animate() {
